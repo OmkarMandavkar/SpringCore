@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd 
+	http://www.springframework.org/schema/context 
+	http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<!-- Dependency Injection : Setter Injection Using ListObject -->
+	<bean id="Subject1" class="com.di.setter.listObjects.Subject">
+		<property name="name" value="JAVA"></property>
+		<property name="days" value="90"></property>
+	</bean>
+
+	<bean id="Subject2" class="com.di.setter.listObjects.Subject">
+		<property name="name" value="HIBERNATE"></property>
+		<property name="days" value="20"></property>
+	</bean>
+
+	<bean id="Subject3" class="com.di.setter.listObjects.Subject">
+		<property name="name" value="SPRING"></property>
+		<property name="days" value="45"></property>
+	</bean>
+
+
+	<bean id="StudentObject" class="com.di.setter.listObjects.Student">
+		<property name="name" value="Zeus"></property>
+		<property name="subjects">
+			<list>
+				<ref bean="Subject1" />
+				<ref bean="Subject2" />
+				<ref bean="Subject3" />
+			</list>
+		</property>
+	</bean>
+
+</beans>	
+
